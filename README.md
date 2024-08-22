@@ -14,5 +14,11 @@
 - Speed and Odometer: Missing values in the speed and odometer columns were handled using linear interpolation. This approach assumes that changes in speed and distance are continuous and that intermediate values can be estimated based on adjacent readings.
 - Fuel Level: Missing values in the fuel level column were handled using forward fill (ffill), where the last observed fuel level was carried forward to fill gaps. This assumes that the fuel level remained constant until a new reading was recorded.
 
+### Inferences:
+#### Calculated vs. Provided Fuel Economy:
+- The calculated fuel economy values varied significantly from the provided MPG values in some cases. This could be due to various factors such as differences in driving conditions, vehicle maintenance, or inaccuracies in sensor data.
+- Vehicles with significantly higher or lower calculated fuel economy compared to the provided MPG might indicate potential discrepancies in the telemetry data or variations in actual driving behavior compared to standardized testing conditions.
+- The interpolation and ffill methods used for handling missing data may have introduced some level of error, especially if there were long gaps between readings or sudden changes in vehicle performance that were not captured by the data.
+
 ### Conclusion:
 The analysis provides valuable insights into the real-world fuel economy of different vehicles, helping to identify potential areas for improving fuel efficiency and reducing operational costs. Regular monitoring and comparison with provided MPG values can guide better decision-making for fleet management.
